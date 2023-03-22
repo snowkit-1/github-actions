@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  test-name:
+  test_name:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +19,4 @@ jobs:
           java-version: "17"
 
     - name: Run Tests
-      run: javac App.java
+      run: e
