@@ -1,0 +1,28 @@
+name: ENV test
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+
+jobs:
+  my-test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        env:
+          ENV: staging
+        run: |
+          echo "${ENV}"
+
+      - name: Step 2
+        run: |
+          echo "${ENV}"
